@@ -1,0 +1,139 @@
+:root{
+    background-color: azure;
+}
+
+li{
+    padding-bottom: 3px;
+    color:wheat;
+    text-shadow: 1.5 px 1 px 3px black;
+    list-style-type: none;
+}
+
+p{
+    color: black;
+    text-shadow: .5px .5px white;
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: -0.5rem;
+}
+
+input{
+    text-align: center;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    max-width: 80rem;
+}
+
+button {
+    display: inline-block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: blueviolet;
+    border-radius: 10px;
+    border: 3px double #cccc;
+    color: #eeee;
+    text-align: center;
+    font-size: 15px;
+    padding: 20px;
+    width: 200px;
+    margin-top: 3px;
+}
+
+button:hover{
+    box-shadow: 3px 3px 6px green;
+}
+
+#firstpage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#timer{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: blue;
+    color:pink;
+    font-size: x-large;
+    text-shadow: 0.5px 0.5px black;
+    text-align: center;
+}
+
+#quiz {
+    display: none;
+}
+
+#result {
+    display:none;
+}
+
+#gameover {
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#highScore{
+    height: 1.5rem;
+    border: groove 2px;
+}
+
+#highscorePage{
+    display: none;
+    width: 50%;
+    border: solid;
+    border-color: silver;
+    border-bottom-style: groove;
+    padding-bottom: 0.3rem;
+    background: red;
+}
+
+#highscoreheader {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: outset;
+    margin-bottom: 0.5rem;
+    background: coral;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#initials{
+    margin: 0.5rem;
+    height: 1.75rem;
+}
+
+#highscore-names{
+    display: inline-block;
+    padding-left: 9.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+
+#highscore-score{
+    display: inline-block;
+    padding-left: 8.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+
+#finalscore{
+    padding-bottom: 0.5rem;
+    font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+#endbuttons{
+    display: none;
+}
