@@ -16,7 +16,7 @@ var finalscore = document.getElementById("finalscore");
 //highscore info variables
 var hspg = document.getElementById("hspg");
 var hscontainter = document.getElementById("hscontainer");
-var hsnameinput = document.getElementById("inputname");
+var hsnameinput = document.getElementById("initials");
 var hsname = document.getElementById("hsinitials");
 var submiths = document.getElementById("submiths");
 var hsdisplay = document.getElementById("highscore");
@@ -125,7 +125,7 @@ submiths.addEventListener("click", function highscore() {
         alert ("initials must be filled in");
         return false;
     }else{
-        var hssave = json.parse(localStorage.getItem("hssave")) || [];
+        var hssave = JSON.parse(localStorage.getItem("hssave")) || [];
         var user = hsnameinput.value.trim();
         var hscurrent = {
             name : user,
@@ -137,7 +137,7 @@ submiths.addEventListener("click", function highscore() {
         endbtns.style.display = "flex";
 
         hssave.push(hscurrent);
-        localStorage.setItem("hsdisplay", json.stringify(hssave));
+        localStorage.setItem("hsdisplay", JSON.stringify(hssave));
         generatehs();
     }
 });
