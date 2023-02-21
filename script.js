@@ -145,7 +145,7 @@ submiths.addEventListener("click", function highscore() {
 function generatehs(){
     hsname.innerHTML = "";
     hsdisplay.innerHTML = "";
-    var hs = JSON.parse(localStorage.getItem("savedHS")) || [];
+    var hs = JSON.parse(localStorage.getItem("hsdisplay")) || [];
     for (i=0; i<hs.length; i++){
         var newinitials = document.createElement("li");
         var newscore = document.createElement("li");
