@@ -73,8 +73,9 @@ button:hover{
     display: none;
 }
 
-#result {
+.result {
     display:none;
+    
 }
 
 #gameover {

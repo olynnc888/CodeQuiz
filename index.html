@@ -12,7 +12,7 @@
         <div id="startpg">
             <h2>Welcome to my Coding Quiz!</h2>
             <h2>How Well do You Know Basic Coding?</h2>
-        <button id="startbtn">Begin Quiz</button>
+        <button id="startbtn" onclick="replay()">Begin Quiz</button>
         <!--called startpagehighscore-->
         <button id="HSbutton">High Scores</button>
         </div>
@@ -21,22 +21,22 @@
         <div id="timer">Seconds Left: </div>
         <!--questions id-->
             <div id="questions"><p>Quiz Questions</p></div>
-                <button id="A" onclick="Answercheck('a')">A</button>
-                <button id="B" onclick="Answercheck('b')">B</button>
-                <button id="C" onclick="Answercheck('c')">C</button>
-                <button id="D" onclick="Answercheck('d')">D</button>
-            <div id="results"></div>
+                <button id="A" onclick="Answercheck('A')">A</button>
+                <button id="B" onclick="Answercheck('B')">B</button>
+                <button id="C" onclick="Answercheck('C')">C</button>
+                <button id="D" onclick="Answercheck('D')">D</button>
+            <div class="result"></div>
     </div>
 
-    <div id="GameOver">
+    <div class="result" id="GameOver">
 
-        <div id="finalscore"></div>
+        <p id="finalscore"></p>
         <input type="text" size="50" placeholder="Who are you, master of code?" name="initials" id="initials"/>
         <!--submit score-->
         <button id="SubmitHS">Brag About Your Score</button>
     </div>
 <!--highschore containter, highschorepage,-->
-    <div id="hscontainer">
+    <div class="result" id="hscontainer">
     <div id="hspg">
         <div id="highscoreheader">
             <h3>Code Master</h3>
@@ -46,8 +46,8 @@
         <div id="hsinitials"></div>
         <div id="highscore"></div>
     </div>
-    <div id="endbtns">
-        <button id="startbtn" onclick="replay()">Try Again?</button>
+    <div class="result" id="endbtns">
+        <button id="startbtn" onclick="replay()">Play Again?</button>
         <button id="NoMoHighScore" onclick="clearHS()">Clear Highscores</button>
     </div>
 

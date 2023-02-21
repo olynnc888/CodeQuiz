@@ -29,7 +29,7 @@ var qquestions = [{
     choiceB: "HyperText Markup Langauge",
     choiceC: "Hard Tough Makeshift Language",
     choiceD: "HyperText Multidimentional Language",
-    correctAnswer: "B"},
+    Answer: "B"},
 
     {
     question: "What is the purpose of CSS?",
@@ -37,7 +37,7 @@ var qquestions = [{
     choiceB: "There is no purose to it... similar to life (not in a sad way, but in a freeing way)",
     choiceC: "It is the only language needed to make a website",
     choiceD: "It's used to create interactive web content.",
-    correctAnswer: "A"},
+    Answer: "A"},
 
     {
     question: "What is the DOM?",
@@ -45,7 +45,7 @@ var qquestions = [{
     choiceB: "Digital Order Mode",
     choiceC: "Document Object Model",
     choiceD: "Documentation Order Management",
-    correctAnswer: "C"},
+    Answer: "C"},
 
     {
     question: "What is the skeleton of all web design code developement?",
@@ -53,7 +53,7 @@ var qquestions = [{
     choiceB: "CSS",
     choiceC: "Javascript",
     choiceD: "Python",
-    correntAnswer: "A"},
+    Answer: "A"},
 
     {
     question: "What is Bootstrap?",
@@ -61,14 +61,14 @@ var qquestions = [{
     choiceB: "language for creating websites without javascript",
     choiceC: "the most popular CSS Framework for developing responsive and mobile-first websites",
     choiceD: "Nothing. It is nothing.",
-    correctAnswer: "C"},
+    Answer: "C"},
 
     ];
 
 //various variables
 var fquestionindex = qquestions.length;
 var cquestionindex = 0;
-var timeleft;
+var timeleft= 60;
 var score = 0;
 var correct;
 var timerClock;
@@ -94,13 +94,15 @@ function startQuiz(){
 }
 
 // question loop
-function generatequizquestion(){
+function generatequizQuestion(){
     gameover.style.display = "none";
     if (cquestionindex === fquestionindex){
         return showScore();
     }
     var cquestion = qquestions[cquestionindex];
-    questions.innerHTML = "<p>" + cquestion + "</p>";
+    console.log(cquestion);
+    questions.innerHTML = "<p>" + cquestion.question + "</p>";
+    console.log(cquestionindex);
     btnA.innerHTML = cquestion.choiceA;
     btnB.innerHTML = cquestion.choiceB;
     btnC.innerHTML = cquestion.choiceC;
@@ -112,8 +114,9 @@ function showScore(){
     quizpart.style.display = "none";
     gameover.style.display = "flex";
     clearInterval(timerClock);
-    hsnameinput.value = "";
-    finalscore.innerHTML = "You got " + score + " out of " + qquestions.length + " correct!";
+    // hsnameinput.value = "";
+
+    finalscore.textContent = "You got " + score + " out of " + qquestions.length + " correct!";
 }
 
 //highscore submit 
@@ -134,7 +137,7 @@ submiths.addEventListener("click", function highscore() {
         endbtns.style.display = "flex";
 
         hssave.push(hscurrent);
-        localStorage.setItem("hssaved", json.stringify(hssave));
+        localStorage.setItem("hsdisplay", json.stringify(hssave));
         generatehs();
     }
 });
@@ -182,17 +185,23 @@ function replay(){
 
 //question answer check
 function Answercheck(answer){
-    correct = qquestions[cquestionindex].correctAnswer;
+    Answer = qquestions[cquestionindex].Answer;
+    console.log(Answer);
+    console.log(cquestionindex);
+    console.log(qquestions);
+    console.log(answer);
 
-    if (answer === correct && cquestionindex !== fquestionindex){
+
+    if (answer === Answer && cquestionindex !== fquestionindex){
         score++;
+        console.log(score);
         alert("Correct! :)");
         cquestionindex++;
-        generatequizquestion();
-    }else if (answer !== correct && cquestionindex !== fquestionindex){
+        generatequizQuestion();
+    }else if (answer !== Answer && cquestionindex !== fquestionindex){
         alert("Incorrect :(")
         cquestionindex++;
-        generatequizquestion();
+        generatequizQuestion();
     }else{
         showScore();
     }
